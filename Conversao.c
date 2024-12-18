@@ -3,13 +3,15 @@
 
 double converter(double valor, char unidade_origem[], char unidade_destino[]) {
     // Fatores de conversão para metros
-    double fatores_para_metros[] = {1.0, 0.01, 0.0254, 1609.34};
-    char unidades[][15] = {"metros", "centimetros", "polegadas", "milhas"};
+   double fatores_para_metros[] = {1.0, 0.01, 0.0254, 1609.34, 0.3048, 0.9144,1000};
+    char unidades[][15] = {"metros", "centimetros", "polegadas", "milhas", "pes", "jardas","KM"};
+
+
     
     int origem = -1, destino = -1;
 
     // Encontrar os índices das unidades de origem e destino
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 7; i++) {
         if (strcmp(unidade_origem, unidades[i]) == 0) {
             origem = i;
         }
